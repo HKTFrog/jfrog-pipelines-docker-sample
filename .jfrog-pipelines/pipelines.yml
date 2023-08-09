@@ -31,7 +31,7 @@ resources:
       buildNumber: 1
             
 pipelines:
-  - name: Docker_Quickstart
+  - name: docker_quickstart_lowercase
     configuration:
       jfrogCliVersion: 2  
     steps:
