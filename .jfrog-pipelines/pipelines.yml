@@ -69,6 +69,8 @@ pipelines:
       - name: publish_dbp_build
         type: PublishBuildInfo
         configuration:
+          environmentVariables:
+            newrelic_group_id: my_group_id
           inputSteps:
             - name: docker_push
           outputResources:
