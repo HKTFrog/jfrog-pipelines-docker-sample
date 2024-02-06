@@ -2,6 +2,8 @@ resources:
   - name: dbp_repo
     type: GitRepo
     configuration:
+      environmentVariables:
+        newrelic_group_id: my_group_id
       gitProvider: GitHub                            # <-- replace with your integration DONE 
       path: HKTFrog/jfrog-pipelines-docker-sample    # <-- replace with your repository name DONE 
       branches:
@@ -68,9 +70,6 @@ pipelines:
 
       - name: publish_dbp_build
         type: PublishBuildInfo
-        configuration:
-          environmentVariables:
-            newrelic_group_id: my_group_id
           inputSteps:
             - name: docker_push
           outputResources:
