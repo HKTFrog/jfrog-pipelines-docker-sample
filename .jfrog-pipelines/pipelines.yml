@@ -70,6 +70,7 @@ pipelines:
 
       - name: publish_dbp_build
         type: PublishBuildInfo
+        configuration:
           inputSteps:
             - name: docker_push
           outputResources:
