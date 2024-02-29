@@ -1,0 +1,24 @@
+resources:
+  - name: MyWebhook
+    type: IncomingWebhook
+    configuration:
+      webhookName: xray_webhook
+
+pipelines:
+  - name: webhook_to_trigger_worker 
+    steps:
+      - name: Process_Incoming_Webhook
+        type: Bash
+        configuration:
+          inputResources:
+            - name: MyWebhook
+          integrations:
+            - Artifactory
+        execution:
+          onExecute:
+            - |
+              echo "$res_MyWebhook_payload" | jq '.' > payload.json
+              curl -XPOST --location \
+              'http://nginxplus.jfrog.io/worker/api/v1/execute/Kristian' --header 'Content-Type: application/json' \
+              --header 'Authorization: Bearer int_Artifactory_accessToken'
+              - echo "$step_url
