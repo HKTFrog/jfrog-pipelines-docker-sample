@@ -13,7 +13,7 @@ pipelines:
           inputResources:
             - name: MyWebhook
           integrations:
-            - Artifactory
+            - name: Artifactory
         execution:
           onExecute:
             - |
