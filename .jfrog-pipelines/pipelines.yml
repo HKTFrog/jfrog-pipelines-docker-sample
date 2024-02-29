@@ -75,3 +75,12 @@ pipelines:
 #            - name: dbp_build_info          
 #
 #     - name: promote_dbp_build
+#       type: PromoteBuild
+#       configuration:
+#         targetRepository: dev-docker-local
+#         integrations:
+#           - name: Artifactory
+#         inputResources:
+#           - name: dbp_build_info
+#         outputResources:
+#           - name: dbp_promoted_build_info
