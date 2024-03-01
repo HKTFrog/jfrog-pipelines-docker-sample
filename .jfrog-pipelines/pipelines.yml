@@ -31,7 +31,7 @@ resources:
       buildNumber: 1
             
 pipelines:
-  - name: docker_build_push
+  - name: docker_build_push_pipeline
     configuration:
       jfrogCliVersion: 2  
     steps:
@@ -41,7 +41,7 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: nginxplus.jfrog.io/dev-docker-local/webgoat # nginxplus.jfrog.io/dev-docker-local/dbp  # replace with your image path and name DONE 
+          dockerImageName: nginxplus.jfrog.io/dev-docker-local/webgoat/
           dockerImageTag: ${run_number}
           inputResources:
             - name: dbp_repo
