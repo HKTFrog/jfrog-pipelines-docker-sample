@@ -20,6 +20,6 @@ pipelines:
             - echo "$int_Artifactory_url"
             - echo "$step_url"
             - |
-            curl -XPOST --location 'https://nginxplus.jfrog.io/worker/api/v1/execute/Kristian' \
-            --header 'Content-Type: application/json' \
-            --header "Authorization: Bearer $int_Artifactory_accessToken"
+                curl -XPOST --location 'https://nginxplus.jfrog.io/worker/api/v1/execute/Kristian' \
+                --header 'Content-Type: application/json' \
+                --header "Authorization: Bearer $int_Artifactory_accessToken"
