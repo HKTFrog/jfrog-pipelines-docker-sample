@@ -21,4 +21,4 @@ pipelines:
               curl -XPOST --location \
               'http://nginxplus.jfrog.io/worker/api/v1/execute/Kristian' --header 'Content-Type: application/json' \
               --header 'Authorization: Bearer int_Artifactory_accessToken'
-              - echo "$step_url
+              - echo "$step_url"
