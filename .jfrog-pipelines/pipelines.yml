@@ -41,7 +41,7 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: nginxplus.jfrog.io/dev-docker-local/webgoat/
+          dockerImageName: nginxplus.jfrog.io/dev-docker-local/webgoat
           dockerImageTag: ${run_number}
           inputResources:
             - name: dbp_repo
