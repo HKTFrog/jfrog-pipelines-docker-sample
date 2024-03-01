@@ -58,13 +58,13 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dbp_group 
-         targetRepository: dev-docker-local   
-         integrations:
-           - name: Artifactory                            # <-- replace with your artifactory integration DONE 
-         inputSteps:
-           - name: docker_build
-         outputResources:
-           - name: dbp_image           
+          targetRepository: dev-docker-local   
+          integrations:
+            - name: Artifactory                            # <-- replace with your artifactory integration DONE 
+          inputSteps:
+            - name: docker_build
+          outputResources:
+            - name: dbp_image           
 
      - name: publish_dbp_build
        type: PublishBuildInfo
